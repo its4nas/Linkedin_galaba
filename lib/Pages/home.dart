@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,15 +22,20 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         elevation: 2,
 
-        leading: Container(
-          margin: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10)
-          ),
-        ),
+        // leading: Container(
+        //   margin: EdgeInsets.all(10),
+        //   decoration: BoxDecoration(
+        //     color: Colors.white,
+        //     borderRadius: BorderRadius.circular(10)
+        //   ),
+        // ),
       ),
-      // drawer: const NavigationBar(destinations: ),
+      body: Container(
+
+      ),
+      drawer: Drawer(
+        width: MediaQuery.of(context).size.width * 0.70,
+      ),
     );
   }
 }
